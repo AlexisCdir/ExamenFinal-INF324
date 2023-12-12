@@ -30,7 +30,7 @@
 		<div class="row d_flex">
 			<div class="col-md-7">
 				<div class="titlepage">
-					<h2>Su inscripcion a temporada ha sido RECHAZADA!</h2>
+					<h2>Su solicitud de Certificado de Egreso ha sido RECHAZADA!</h2>
 					<br>
 					<h1>Pase por Kardex para mas informacion</h1>
 					<ul style="font-size: 18px">
