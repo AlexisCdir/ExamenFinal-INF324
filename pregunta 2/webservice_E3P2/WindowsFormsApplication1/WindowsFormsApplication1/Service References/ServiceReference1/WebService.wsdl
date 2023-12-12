@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="suma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="a" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="b" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sumaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sumaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mostrarAlumnos">
+        <s:complexType />
+      </s:element>
+      <s:element name="mostrarAlumnosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mostrarAlumnosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="adicionarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ci" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nota" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="adicionarAlumnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="updateAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ci" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nota" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateAlumnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="eliminarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ci" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarAlumnoResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="sumaSoapIn">
+    <wsdl:part name="parameters" element="tns:suma" />
+  </wsdl:message>
+  <wsdl:message name="sumaSoapOut">
+    <wsdl:part name="parameters" element="tns:sumaResponse" />
+  </wsdl:message>
+  <wsdl:message name="mostrarAlumnosSoapIn">
+    <wsdl:part name="parameters" element="tns:mostrarAlumnos" />
+  </wsdl:message>
+  <wsdl:message name="mostrarAlumnosSoapOut">
+    <wsdl:part name="parameters" element="tns:mostrarAlumnosResponse" />
+  </wsdl:message>
+  <wsdl:message name="adicionarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:adicionarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="adicionarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:adicionarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:updateAlumno" />
+  </wsdl:message>
+  <wsdl:message name="updateAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:updateAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="eliminarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="suma">
+      <wsdl:input message="tns:sumaSoapIn" />
+      <wsdl:output message="tns:sumaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mostrarAlumnos">
+      <wsdl:input message="tns:mostrarAlumnosSoapIn" />
+      <wsdl:output message="tns:mostrarAlumnosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="adicionarAlumno">
+      <wsdl:input message="tns:adicionarAlumnoSoapIn" />
+      <wsdl:output message="tns:adicionarAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAlumno">
+      <wsdl:input message="tns:updateAlumnoSoapIn" />
+      <wsdl:output message="tns:updateAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarAlumno">
+      <wsdl:input message="tns:eliminarAlumnoSoapIn" />
+      <wsdl:output message="tns:eliminarAlumnoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suma">
+      <soap:operation soapAction="http://tempuri.org/suma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarAlumnos">
+      <soap:operation soapAction="http://tempuri.org/mostrarAlumnos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="adicionarAlumno">
+      <soap:operation soapAction="http://tempuri.org/adicionarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAlumno">
+      <soap:operation soapAction="http://tempuri.org/updateAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarAlumno">
+      <soap:operation soapAction="http://tempuri.org/eliminarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suma">
+      <soap12:operation soapAction="http://tempuri.org/suma" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarAlumnos">
+      <soap12:operation soapAction="http://tempuri.org/mostrarAlumnos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="adicionarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/adicionarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAlumno">
+      <soap12:operation soapAction="http://tempuri.org/updateAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/eliminarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:2315/clase%2013/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://localhost:2315/clase%2013/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
